@@ -66,3 +66,18 @@ cp.template.PowerupLaBomba = cp.template.Powerup.extend({
         obj.color = '#00f';
     }
 });
+
+cp.template.PowerupMultishot = cp.template.Powerup.extend({
+    
+    init: function() {
+        this.x = 150;
+        this.animSheet = new cp.animate.sheet('multishot-sprite.png', this.width, this.height);
+        this.animClick = new cp.animate.cycle(this.animSheet, 0.1, [0, 1, 2, 0, 3, 4, 5, 6, 7, 8, 9 , 10, 7, 10, 7, 10, 7, 10, 1, 2, 0, 0, 0, 0, 0]);
+        this.animClick.repeat = true;
+        this.animSet = this.animClick;
+    },
+    
+    upgrade: function(obj) {
+        
+    }
+});
